@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<!-- saved from url=(0025)https://www.idstudios.io/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Intelligent Design Studios</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="cache-control" content="max-age=0">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT">
+    <meta http-equiv="pragma" content="no-cache">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- styles -->
+    <link href="./index_files/css" rel="stylesheet">
+    <link href="./index_files/bootstrap.css" rel="stylesheet">
+    <link href="./index_files/bootstrap-theme.css" rel="stylesheet">
+    <link href="./index_files/font-awesome.css" rel="stylesheet">
+    <link href="./index_files/style.css" rel="stylesheet">
+    <link rel="SHORTCUT ICON" href="https://www.idstudios.io/images/favicon.ico">
+  </head>
+<body style="zoom: 1;">
+
+<script src="./index_files/jquery-2.1.0.min.js"></script>
+<script src="./index_files/underscore.min.js"></script>
+<script src="./index_files/bootstrap.min.js"></script>
+<script src="./index_files/backbone.min.js"></script>
+<script src="./index_files/select2.js"></script>
+<script src="./index_files/jquery.cookie.js"></script>
+<script src="./index_files/jquery.input-clear.js"></script>
+<script src="./index_files/jquery.total-storage.js"></script>
+<script src="./index_files/jquery.touchsplitter.js"></script>
+<script src="./index_files/jquery.linkify.js"></script>
+<script src="./index_files/uuid.js"></script>
+<script src="./index_files/moment.min.js"></script>
+<script src="./index_files/highcharts.js"></script>
+<script src="./index_files/highcharts-3d.js"></script>
+<script src="./index_files/exporting.js"></script>
+
+
+<script>
+
+/**
+ * Namespace definition
+ */
+ var Ghost = {
+  Model: {},
+  Views: {},
+  App: {
+    Frameworks: {},
+    Groups: {},
+    Actions: {},
+    Settings: {},
+    Dashboard: {},
+    Assessments: {},
+    Commitments: {},
+    Opportunities: {}
+  }
+ }
+
+/**
+ * Globals
+ */
+
+function htmlEncode(value){
+  return $('<div/>').text(value).html();
+}
+
+function processText(text) {
+  return text;
+  //return text.replace(/\r\n/g, '<br />').replace(/[\r\n]/g, '<br />');
+}
+
+(function($) {
+    $.queryString = (function(a) {
+        if (a == "") return {};
+        var b = {};
+        for (var i = 0; i < a.length; ++i)
+        {
+            var p=a[i].split('=');
+            if (p.length != 2) continue;
+            b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+        }
+        return b;
+    })(window.location.search.substr(1).split('&'))
+
+    $.fn.serializeObject = function() {
+      var o = {};
+      var a = this.serializeArray();
+      $.each(a, function() {
+          if (o[this.name] !== undefined) {
+              if (!o[this.name].push) {
+                  o[this.name] = [o[this.name]];
+              }
+              o[this.name].push(this.value || '');
+          } else {
+              o[this.name] = this.value || '';
+          }
+      });
+      return o;
+    };
+
+
+})(jQuery);
+
+</script>
+
+
+<div class="container-fluid">
+  <!-- Navbar -->
+  <div class="navbar navbar-fixed-top landing-navbar" role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#signin-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a href="https://www.idstudios.io/" class="navbar-brand landing-navbar-logo">
+        <img width="250" src="./index_files/logo-2016.png">
+      </a>
+    </div>
+
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="https://www.idstudios.io/#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Our Projects<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="https://cluster-builder.idstudios.io/">Cluster Builder - Kubernetes for VMware</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="https://www.idstudios.io/#projects/octane">Octane - Operational Analysis SaaS</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="https://www.idstudios.io/#projects/dabs">DABS - Drilling and Blasting System</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="https://www.idstudios.io/#projects/daxti">Daxti - DynamicAX Trades Interface</a></li>
+        </ul>
+      </li>
+    </ul>
+</div>
+
+  </div>
+
+<div id="landing-page-wrapper">
+  <div id="landing-page-container">
+          
+    <div class="landing-section landing-section-picture landing-section-well">
+      <div class="body-content">
+  <h1 class="landing-section-title landing-main-title">
+  We <span class="highlight">develop software</span>
+</h1>
+<a class="contact-us" href="mailto:info@intelligent-design.ca">Contact Us</a>
+  <div class="container-fluid">
+    <div class="row ticker">
+      <div class="col-sm-12">
+        <div class="footer" style="opacity: 0.5;">
+        <span class="darker" style="">Linux. </span>
+        <span class="darker" style="">Node.js. </span>
+        <span class="darker" style="">MongoDB. </span>
+        <span class="darker" style="">Html5.</span>
+        <span class="darker" style="">OAuth2. </span>
+        <span class="darker" style="">ES6. </span>
+        <span class="darker" style="">DC/OS. </span>
+        <span class="darker" style="">k8s. </span>
+        <span class="darker" style="">Docker. </span>
+        <span class="darker" style="">EC2. </span>
+        <span class="darker" style="">ESX. </span>
+        <span class="darker" style="">Git. </span>
+        <span class="darker" style="">Gitlab. </span>
+        <span class="darker" style="">C#. </span>
+        <span class="darker" style="">Java. </span>
+        <span class="darker" style="">Go. </span>
+        <span class="darker" style="">Bash. </span>
+        <span class="darker" style="">SSH. </span>
+
+        <span class="run" style="">&gt; <span class="inner-run" style="display: inline;">Run</span>
+        </span></div>
+      </div>
+    </div>
+  </div>
+
+<script>
+
+$(document).ready(function() {
+                  
+  $(".darker").fadeIn(2000, function() {
+    $(".run").fadeIn(500, function() {
+      $(".inner-run").fadeIn(300, function() {
+        $(".inner-run").fadeOut(300, function() {
+          $(".inner-run").html("Run");
+          $(".inner-run").fadeIn(500, function() {
+            $(".footer").fadeTo(5000, .5);    
+          });        
+        });        
+      });
+    });
+  });
+
+});
+</script>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script type="text/template" id="project-slide-template">
+  <iframe class='project-display' src="<%= url %>" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</script>
+
+<script>
+
+
+var Router =  Backbone.Router.extend({
+  routes: {
+    "": "reload",
+    "projects/octane": "octane",
+    "projects/dabs": "dabs",
+    "projects/daxti": "daxti"
+  },
+  initializeDefaultRouteActions: function() {
+    var that = this;
+
+    this.on('route:reload', function() {
+    });
+    
+    this.on('route:octane', function(id) {
+
+      $(".body-content").fadeOut(1000, function() {
+        var template = _.template($("#project-slide-template").html(), {
+          url: "https://docs.google.com/presentation/d/139e38Gx_9yNIPzHGIRjE0ubOfcrjTu-6elECLxoEjoc/embed?start=true&loop=false&delayms=6000"
+        });
+        
+        $(".body-content").html(template);        
+        $(".body-content").show(1500);        
+      });
+
+    });
+
+    this.on('route:dabs', function(id) {
+
+      $(".body-content").fadeOut(1500, function() {
+        var template = _.template($("#project-slide-template").html(), {
+          url: "https://docs.google.com/presentation/d/1S3tYy0VFkMsMWbtGmWt0wQjQ_SHAbesB4ctUfkLXaPc/embed?start=true&loop=false&delayms=6000"
+        });
+        
+        $(".body-content").html(template);        
+        $(".body-content").show(1500);        
+      });
+
+    });
+
+    this.on('route:daxti', function(id) {
+
+      $(".body-content").fadeOut(1000, function() {
+        var template = _.template($("#project-slide-template").html(), {
+          url: "https://docs.google.com/presentation/d/1eEMBhKBDuZygfWCYvJB9yJ3UfLKnx3BOYqp08CJyP-0/embed?start=true&loop=false&delayms=6000"
+        });
+        
+        $(".body-content").html(template);        
+        $(".body-content").show(1500);        
+      });
+
+    });
+  }
+});
+
+  var router = new Router();
+  router.initializeDefaultRouteActions();
+
+  Backbone.history.start();
+
+
+$(document).ready(function() {
+
+
+});
+
+</script>
+
+
+
+</body></html>
